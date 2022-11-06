@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieApp2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+      <li class="nav-item">
+        <a class="nav-link text-success" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-success" href="#">Contact Us</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!--  Add notice and Alert -->
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+    <%= yield %>
+
+    <!-- Footer Copyright -->
+    <footer>
+    <div class="text-center bg-secondary text-white p-3 mt-3 ">
+      © 2020 Copyright.
+      <a class="text-white" href="https://rubyonrails.org/">Build with Ruby on Rails</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  </body>
+</html>

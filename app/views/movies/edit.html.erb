@@ -1,0 +1,19 @@
+
+<div class="row text-center mt-3 mb-2">
+        <div class="col-lg-7 mx-auto">
+            <h1 class="display-4 text-success">Editing movie</h1>
+        </div>
+        
+</div>
+<%= render "form", movie: @movie %>
+
+<br>
+
+<div class="row text-center mt-3 mb-2">
+        <div class="col-lg-7 mx-auto">
+            <button type="button" class="btn btn-success float-left"><%= link_to "Show this movie", @movie, class:"text-white" %> </button>
+            <button type="button" class="btn btn-success float-left ml-3 "><%= link_to "Back to movies", movies_path, class:"text-white" %></button>
+        </div>
+        
+</div>
+

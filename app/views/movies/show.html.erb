@@ -1,0 +1,55 @@
+
+  <div class="row text-center mb-5">
+        <div class="col-lg-7 mx-auto">
+            <h1 class="display-4 text-success">Movie Info</h1>
+        </div>
+        
+  </div>
+<%= render @movie %>
+
+
+<div class="row mt-1">
+    <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul class="">
+                <!-- list group item-->
+
+                    <!-- Custom content-->
+                    <div class="flex-column flex-lg-row ">
+                      <button type="button" class="btn btn-success mt-3 "> <%= link_to "Edit this movie", edit_movie_path(@movie), class:"text-white" %> </button>
+                       <button type="button" class="btn btn-success mt-3 ml-2"> <%= link_to "< Back to movies", movies_path, class:"text-white" %>  </button>
+                       <%= button_to "Destroy this movie", @movie, method: :delete, :form_class => "btn mt-3 float-right" %>
+                            
+                          
+                    </div> <!-- End -->
+
+            </ul> <!-- End -->
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+
+<div class="row mt-3 ">
+
+    <div class="col-lg-7 list-group shadow mx-auto">
+            <!-- List group-->
+            <hr>
+            <ul class="">
+                <!-- list group item-->
+                <h3 class="display-6 text-success">Comments</h3>
+              <div class="card col-lg-12">
+                <ul class="list-group list-group-flush">
+                <%= render @movie.comments %>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="display-6 text-success mt-3">Add a comment:</h3>
+                <%= render 'comments/form' %>
+              </div>
+            </ul> 
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>

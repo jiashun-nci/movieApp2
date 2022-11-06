@@ -1,0 +1,57 @@
+<div id="<%= dom_id movie %>">
+  <!--
+  <p>
+    <strong>Title:</strong>
+    <%= movie.title %>
+  </p>
+
+  <p>
+    <strong>Language:</strong>
+    <%= movie.language %>
+  </p>
+
+  <p>
+    <strong>Release date:</strong>
+    <%= movie.release_date %>
+  </p>
+
+  <p>
+    <strong>Synopsis:</strong>
+    <%= movie.synopsis %>
+  </p>
+  -->
+
+  <div class="container">
+
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                <li class="list-group-item">
+                    <!-- Custom content-->
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                        <div class="media-body order-2 order-lg-1">
+                            
+                            <h4 class="mt-0 font-weight-bold ">
+                              <%= link_to movie.title, movie, class:"text-success" %>
+                            </h4>
+                            <h6 class="">Movie Synopsis:</h6>
+                            <p class="font-italic text-muted mb-0 small"><%= movie.synopsis %></p>
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <h6 class="font-weight-bold my-2">Year: <span class="font-italic text-muted mb-0 small"><%= movie.release_date %></span></h6>
+                                <h6 class="font-weight-bold my-2">Language: <span class="font-italic text-muted mb-0 small"><%= movie.language %></span></h6>
+                            </div>
+                        </div><img src=<%= movie.url %> alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                    </div> <!-- End -->
+                </li> <!-- End -->
+            </ul> <!-- End -->
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+
+</div>
+
+

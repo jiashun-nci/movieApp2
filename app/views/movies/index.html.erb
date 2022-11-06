@@ -1,0 +1,27 @@
+
+
+  <div class="row text-center mb-5">
+
+        <div class="col-lg-7 mx-auto">
+            <h1 class="display-4 text-success">Movie List</h1>
+        </div>
+        <div class="col-sm-7 mx-auto">
+            <button type="button" class="btn btn-success"><%= link_to "New movie", new_movie_path, class:"text-white" %></button>
+        </div>
+  </div>
+
+<div id="movies">
+  <% @movies.each do |movie| %>
+    <%= render movie %>
+    <!--
+    <p>
+      <%= link_to "Show this movie", movie %>
+    </p>
+    -->
+  <% end %>
+</div>
+    <!--
+<%= link_to "New movie", new_movie_path %>
+    -->
+
+
