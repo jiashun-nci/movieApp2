@@ -21,10 +21,16 @@
         <a class="nav-link text-success" href="#">Contact Us</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <!-- Add Login /sign up links -->
+    <% if user_signed_in? %>
+      <span class="text-white">Welcome! </span><strong class="text-white ml-2"><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-outline-success' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-danger'  %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-outline-info'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'btn btn-outline-success'  %>
+    <% end %>
+    <!-- END of Login /sign up links -->
   </div>
 </nav>
 
@@ -39,9 +45,9 @@
     <%= yield %>
 
     <!-- Footer Copyright -->
-    <footer>
+    <footer  style="position:relative; bottom:0px; width: 100%;">
     <div class="text-center bg-secondary text-white p-3 mt-3 ">
-      © 2020 Copyright.
+      © <%= Time.now.year %> Copyright.
       <a class="text-white" href="https://rubyonrails.org/">Build with Ruby on Rails</a>
     </div>
     <!-- Copyright -->
